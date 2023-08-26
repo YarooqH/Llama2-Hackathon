@@ -62,7 +62,7 @@ const Sidebar = () => {
               </svg>
             </button>
             {isOpen && (
-              <div className="p-3 ml-5 flex items-center justify-between w-[140px] rounded-md bg-primary hover:scale-105">
+              <div className="p-3 pr-5 ml-5 font-medium flex items-center justify-between w-[140px] rounded-md bg-primary hover:scale-105">
                 <AiOutlinePlus className="text-white" />
                 <h1 className="text-sm text-white">New Chat</h1>
               </div>
