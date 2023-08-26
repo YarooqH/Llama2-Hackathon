@@ -1,14 +1,14 @@
-import React from 'react'
-import UserMsg from './UserMsg'
-import BotMsg from './BotMsg'
+import React from "react";
+import UserMsg from "./UserMsg";
+import BotMsg from "./BotMsg";
 
 function Messages() {
   return (
-    <>
-        <UserMsg />
-        <BotMsg />
-    </>
-  )
+    <div className="font-normal">
+      <UserMsg />
+      <BotMsg />
+    </div>
+  );
 }
 
-export default Messages
+export default Messages;
