@@ -6,15 +6,15 @@
   overflow: hidden;
   max-width: 300px; /* Adjust as needed */
   white-space: nowrap;
-  text-overflow: fade;
+  /* text-overflow: ; */
   display: inline-block;
 }
 
-.fade-ending::after {
+.sidebar::after {
   content: "";
   position: absolute;
   right: 0;
   width: 30px; /* Width of the fading effect */
-  height: 80%;
+  height: 100%;
   background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1)); /* Adjust gradient as needed */
 }
