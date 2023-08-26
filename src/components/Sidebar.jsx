@@ -16,7 +16,7 @@ const Sidebar = () => {
 
                 {/* Sidebar */}
                 {<div
-                    className={`w-64 bg-gray-800 h-screen transition-all duration-300 transform ${isOpen ? 'translate-x-0' : '-translate-x-64 w-0'
+                    className={`w-64 bg-base-100 h-screen transition-all duration-300 transform ${isOpen ? 'translate-x-0' : '-translate-x-64 w-0'
                         }`}
                 >
                     <div className='mt-20 w-full px-2'>
@@ -29,13 +29,13 @@ const Sidebar = () => {
                     <div className='flex fixed top-3 left-3 z-10 items-center justify-around cursor-pointer'>
                         <button
                             onClick={toggleSidebar}
-                            className="p-3 bg-gray-800 text-white rounded-md"
+                            className="p-3 bg-base-100 border-primary border-2 text-white rounded-md"
                         >
                             <svg stroke="currentColor" fill="none" strokeWwidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLineJoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
                         </button>
-                        {isOpen && <div className='p-3 ml-5 flex items-center justify-between w-[140px] rounded-md bg-primary'>
-                            <AiOutlinePlus />
-                            <h1 className='text-sm'>
+                        {isOpen && <div className='p-3 ml-5 flex items-center justify-between w-[140px] rounded-md bg-primary hover:scale-105'>
+                            <AiOutlinePlus className='text-white' />
+                            <h1 className='text-sm text-white'>
                                 New Chat
                             </h1>
                         </div>}
