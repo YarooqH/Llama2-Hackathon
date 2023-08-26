@@ -13,6 +13,7 @@ import {
 import PublicPage from "./PublicPage";
 import ProtectedPage from "./ProtectedPage";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import Dashboard from "../pages/Dashboard";
 
 export default function ClerkProviderWithRoutes(props) {
   const navigate = useNavigate();
@@ -33,11 +34,11 @@ export default function ClerkProviderWithRoutes(props) {
           element={<SignUp routing="path" path="/sign-up" />}
         />
         <Route
-          path="/protected"
+          path="/dashboard"
           element={
             <>
               <SignedIn>
-                <ProtectedPage />
+                <Dashboard />
               </SignedIn>
               <SignedOut>
                 <RedirectToSignIn />
