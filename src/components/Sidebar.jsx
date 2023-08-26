@@ -12,7 +12,7 @@ const Sidebar = () => {
     return (
         <>
             <div className={`transition-all duration-300 ${isOpen ? 'relative w-64' : 'fixed w-0'}`} />
-            <div className={`flex transition-all duration-300 ${isOpen ? 'fixed' : 'relative'}`}>
+            <div className={`flex transition-all duration-300 ${isOpen ? 'fixed' : 'fixed'}`}>
 
                 {/* Sidebar */}
                 {<div
