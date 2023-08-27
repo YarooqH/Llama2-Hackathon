@@ -7,6 +7,7 @@ import Messages from "../components/Messages";
 import Input from "../components/Input";
 import { allMsgsAtom } from "../utils/atoms";
 import { useAtom } from "jotai";
+import { useUser, UserButton } from "@clerk/clerk-react";
 
 function Dashboard() {
   const [link, setLink] = useState('')
@@ -14,6 +15,8 @@ function Dashboard() {
   const [showError, setShowError] = useState(false)
   const [userMsg, setUserMsg] = useState('')
   const [allMsgs, setAllMsgs] = useAtom(allMsgsAtom)
+
+  const { isSignedIn, user, isLoaded } = useUser();
 
   function getYouTubeVideoId(url) {
     const regex = /^(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/;
@@ -35,8 +38,8 @@ function Dashboard() {
 
   const addToChats = (msg) => {
     setAllMsgs([...allMsgs, {
-      type: 'bot',
-      // type: 'user',
+      // type: 'bot',
+      type: 'user',
       msg
     }])
     setUserMsg('')

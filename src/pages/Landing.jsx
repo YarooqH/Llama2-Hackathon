@@ -16,10 +16,10 @@ const Landing = () => {
       <div className="w-8/12 bg-base-100"></div>
       <div className="flex flex-col justify-center w-1/3 bg-secondary">
         <div className="h-full bg-primary flex flex-col space-y-5 items-center justify-center">
-          <h1 className="font-bold text-3xl">Get Started</h1>
+          <h1 className="font-bold text-3xl text-white">Get Started</h1>
           <div className="space-x-2 w-full flex justify-center">
             <button
-              className="btn btn-outline btn-secondary"
+              className="btn btn-outline btn-secondary text-white"
               onClick={() => {
                 navigate("/sign-in");
               }}
@@ -27,7 +27,7 @@ const Landing = () => {
               Log in
             </button>
             <button
-              className="btn btn-outline btn-secondary"
+              className="btn btn-outline btn-secondary text-white"
               onClick={() => {
                 navigate("/sign-up");
               }}
