@@ -24,7 +24,7 @@ const Sidebar = () => {
         {/* Sidebar */}
         {
           <div
-            className={`w-64 bg-base-100 h-screen transition-all duration-300 transform ${
+            className={`w-64 bg-base-100 h-screen border-accent border-r-2 transition-all duration-300 transform ${
               isOpen ? "translate-x-0" : "-translate-x-64 w-0"
             }`}
           >
