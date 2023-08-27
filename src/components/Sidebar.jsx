@@ -4,7 +4,11 @@ import FadeInText from "./FadeInText";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [chats, setChats] = useState([
+    { key: "lorem" },
+    { key: "lorem" },
+    { key: "lorem" },
+  ]);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -28,13 +32,11 @@ const Sidebar = () => {
               isOpen ? "translate-x-0" : "-translate-x-64 w-0"
             }`}
           >
-            <div className="mt-20 w-full px-2">
+            <div className="mt-20 w-full px-2 space-y-1">
               <h2 className="ml-5 text-white font-bold mb-2">History</h2>
-              <FadeInText
-                text={
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis atque, obcaecati voluptatibus quaerat vero quae illum molestiae. Debitis, dolorum vel?"
-                }
-              />
+              {chats.map((chat, index) => (
+                <FadeInText key={index} text={chat.key} />
+              ))}
             </div>
           </div>
         }
