@@ -38,8 +38,8 @@ function Dashboard() {
 
   const addToChats = (msg) => {
     setAllMsgs([...allMsgs, {
-      // type: 'bot',
-      type: 'user',
+      type: 'bot',
+      // type: 'user',
       msg
     }])
     setUserMsg('')

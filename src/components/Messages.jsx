@@ -14,7 +14,7 @@ function Messages(props) {
   }, [allMsgs]);
 
   return (
-    <div className="font-normal pb-20">
+    <div className="font-normal pb-20 w-full">
       {
         props?.link && <Video embedId={props?.link} />
       }
