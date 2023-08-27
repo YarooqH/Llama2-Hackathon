@@ -5,11 +5,15 @@ import Navbar from "../components/Navbar";
 import "../App.css";
 import Messages from "../components/Messages";
 import Input from "../components/Input";
+import { allMsgsAtom } from "../utils/atoms";
+import { useAtom } from "jotai";
 
 function Dashboard() {
   const [link, setLink] = useState('')
   const [videoId, setVideoId] = useState('')
   const [showError, setShowError] = useState(false)
+  const [userMsg, setUserMsg] = useState('')
+  const [allMsgs, setAllMsgs] = useAtom(allMsgsAtom)
 
   function getYouTubeVideoId(url) {
     const regex = /^(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/;
@@ -24,10 +28,18 @@ function Dashboard() {
     if(matchText !== ''){
       window.my_modal_1.close()
     } else {
-      console.log("eerer")
       setShowError(true)
       window.my_modal_1.showModal() 
     }
+  }
+
+  const addToChats = (msg) => {
+    setAllMsgs([...allMsgs, {
+      type: 'bot',
+      // type: 'user',
+      msg
+    }])
+    setUserMsg('')
   }
 
   useEffect(() => {
@@ -41,7 +53,7 @@ function Dashboard() {
         <div className="w-full">
           <Navbar />
           <Messages link={videoId} />
-          <Input />
+          <Input userMsg={userMsg} setUserMsg={setUserMsg} addToChats={addToChats}  />
         </div>
       </div>
         <dialog id="my_modal_1" className="modal">

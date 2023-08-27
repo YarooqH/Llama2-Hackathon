@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import {BiSend} from 'react-icons/bi'
 
-export default function Input() {
-  const [state, setState] = useState("");
+export default function Input(props) {
+  // const [state, setState] = useState("");
   return (
     <div className="flex justify-center">
       {/* <input
@@ -16,13 +16,15 @@ export default function Input() {
           setState(e.target.value);
         }}
       /> */}
-      <form className="absolute bottom-4 w-2/5">
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        props?.addToChats(props?.userMsg)
+        }} className="fixed bottom-4 w-2/5">
         <div class="relative">
           <input
-          value={state}
+          value={props?.userMsg}
           onChange={(e) => {
-            console.log(e);
-            setState(e.target.value);
+            props?.setUserMsg(e.target.value);
           }}
            type="search" id="search" class="block w-full p-4  text-sm rounded-lg bg-accent focus:border-primary" placeholder="Send a Message..." required/>
             <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-primary hover:bg-base-100 font-medium rounded-lg text-sm px-4 py-2 "><BiSend /></button>

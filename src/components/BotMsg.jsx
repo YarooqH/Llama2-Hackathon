@@ -1,17 +1,16 @@
 import React from "react";
+import { TypeAnimation } from 'react-type-animation';
 
-function BotMsg() {
+function BotMsg(props) {
   return (
     <div
-      className="w-full py-4 flex items-center justify-center bg-base-100
-    
-    "
+      className="w-full py-4 flex items-center justify-center bg-base-100"
     >
       <h2 className="w-9/12  lg:w-5/12 text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est quo
-        similique quod quasi molestias. Quos quasi molestiae sit doloremque
-        corrupti quia. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Ab, amet.
+        <TypeAnimation
+          sequence={[props?.msg?.msg]}
+          cursor={false}
+        />
       </h2>
     </div>
   );
