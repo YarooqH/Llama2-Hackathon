@@ -14,6 +14,7 @@ import PublicPage from "./PublicPage";
 import ProtectedPage from "./ProtectedPage";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
+import Landing from "../pages/Landing";
 
 export default function ClerkProviderWithRoutes(props) {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function ClerkProviderWithRoutes(props) {
       navigate={(to) => navigate(to)}
     >
       <Routes>
-        <Route path="/" element={<PublicPage />} />
+        <Route path="/" element={<Landing />} />
         <Route
           path="/sign-in/*"
           element={<SignIn routing="path" path="/sign-in" />}
@@ -37,12 +38,7 @@ export default function ClerkProviderWithRoutes(props) {
           path="/dashboard"
           element={
             <>
-              <SignedIn>
-                <Dashboard />
-              </SignedIn>
-              <SignedOut>
-                <RedirectToSignIn />
-              </SignedOut>
+              <Dashboard />
             </>
           }
         />
