@@ -10,8 +10,8 @@ import {
   SignIn,
   SignUp,
 } from "@clerk/clerk-react";
-import PublicPage from "./PublicPage";
-import ProtectedPage from "./ProtectedPage";
+// import PublicPage from "./PublicPage";
+// import ProtectedPage from "./ProtectedPage";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Landing from "../pages/Landing";
@@ -30,14 +30,7 @@ export default function ClerkProviderWithRoutes(props) {
         <Route path="/" element={<Landing />} />
         <Route path="/sign-in/*" element={<LogIn />} />
         <Route path="/sign-up/*" element={<Register />} />
-        <Route
-          path="/dashboard"
-          element={
-            <>
-              <Dashboard />
-            </>
-          }
-        />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </ClerkProvider>
   );
