@@ -1,7 +1,9 @@
+
 # XORLLAMA: AI Web App 🦙
 
 Welcome to XORLLAMA, an AI-powered web application that brings videos and text together in seamless conversation!
-
+## Checkout AI Repo
+[AI Backend Repo](https://github.com/your-username/ai-backend-repo)
 ## Table of Contents
 
 - [Introduction](#introduction)
