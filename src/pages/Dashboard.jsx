@@ -19,6 +19,7 @@ function Dashboard() {
   const [userMsg, setUserMsg] = useState("");
   const [allMsgs, setAllMsgs] = useAtom(allMsgsAtom);
   const [captions, setCaptions] = useAtom(captionsAtom)
+  const [captionFound, setCaptionFound] = useState(true)
   const [loader, setLoader] = useAtom(loaderAtom)
   const { isSignedIn, user, isLoaded } = useUser();
 
@@ -38,9 +39,12 @@ function Dashboard() {
       window.my_modal_1.close();
       bodyFormData.append('id', matchText)
       let res = await fetchPost('transcripe', bodyFormData)
-      // if (res?.data?.flag) {
+      if (res?.flag) {
         setCaptions(res?.transcription_data)
-      // }
+       } else {
+        window.my_modal_1.showModal();
+        setCaptionFound(false)
+       }
       console.log("ress", res)
     } else {
       setShowError(true);
@@ -89,7 +93,7 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    // window.my_modal_1.showModal();
+    setAllMsgs([])
   }, []);
 
   return (
@@ -120,7 +124,7 @@ function Dashboard() {
           <h3 className="font-bold text-lg">Enter Youtube Video Link</h3>
           <form className="w-full mt-3">
             {showError && (
-              <p className="text-primary">Kindly Enter a Valid URL</p>
+              captionFound ? <p className="text-primary">Kindly Enter a Valid URL</p> : <p className="text-primary">Sorry! we could'nt find captions in this video. try again with other video.</p>
             )}
             <div class="relative">
               <input
